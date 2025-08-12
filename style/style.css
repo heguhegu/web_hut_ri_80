@@ -1,0 +1,294 @@
+/* General Body Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header and Footer */
+header,
+footer {
+  background-color: #d32f2f; /* Red color */
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.header-text p {
+  margin: 0;
+  text-align: left;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  background-color: #b71c1c; /* Darker red */
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 20px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: #c62828;
+}
+
+/* Main Content Layout */
+main {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  margin: 15px;
+}
+
+#content {
+  flex: 3; /* Takes up 3/4 of the space */
+  margin-right: 15px;
+}
+
+aside {
+  flex: 1; /* Takes up 1/4 of the space */
+}
+
+/* Card Style for Articles and Aside */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h2,
+.card h3 {
+  color: #b71c1c;
+}
+
+.peta-img {
+  width: 100%;
+  max-width: 500px; /* Limit image max width */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Wisata Section Styles */
+.wisata-img {
+  width: 100%;
+  max-width: 500px; /* Limit image max width */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wisata-item h3 {
+  margin-top: 0;
+}
+
+/* Aside/Profile Specifics */
+.profile img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.profile h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.profile figure {
+  margin: 0;
+  text-align: center;
+}
+
+.profile figcaption {
+  font-style: italic;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Button Style */
+button {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #b71c1c;
+}
+
+/* Responsive Design using Media Queries */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  #content {
+    margin-right: 0;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .header-text h1,
+  .header-text p {
+    text-align: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  nav ul li {
+    display: block; /* Stack navigation links vertically */
+  }
+
+  nav ul li a {
+    display: block;
+  }
+}
+/* Back to Top Link Style */
+.back-to-top {
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #9e9e9e; /* Warna abu-abu yang tidak mencolok */
+  transition: color 0.3s;
+}
+
+.back-to-top:hover {
+  color: #d32f2f; /* Warna merah saat disentuh mouse */
+}
+
+/* --- Hamburger Menu & Mobile Navigation Styles --- */
+
+/* 1. Tombol Hamburger (disembunyikan di desktop) */
+.hamburger-menu {
+  display: none; /* Sembunyikan di desktop */
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  z-index: 1001; /* Pastikan di atas elemen lain */
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Media Query untuk Tampilan Mobile */
+@media (max-width: 768px) {
+  /* Tampilkan tombol hamburger */
+  .hamburger-menu {
+    display: block;
+    position: absolute; /* Posisikan relatif terhadap header */
+    top: 25px;
+    right: 20px;
+  }
+
+  /* Sembunyikan navigasi utama dan atur sebagai menu dropdown */
+  nav#main-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Sembunyikan di luar layar kiri */
+    width: 100%;
+    height: 100vh;
+    background-color: #b71c1c; /* Warna latar belakang menu */
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  nav#main-nav li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav#main-nav a {
+    font-size: 1.5rem; /* Perbesar font menu mobile */
+    padding: 20px;
+  }
+
+  /* 3. Kelas 'active' untuk menampilkan menu */
+  nav#main-nav ul.active {
+    left: 0; /* Tampilkan menu dengan menggeser ke posisi 0 */
+  }
+
+  /* 4. Animasi Tombol Hamburger menjadi 'X' */
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0; /* Hilangkan garis tengah */
+  }
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
